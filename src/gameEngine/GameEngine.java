@@ -206,6 +206,9 @@ public class GameEngine {
 				// can only advance once
 				break;
 			}
+			if (result == InteractionResult.HEAL) {
+				player.healDamage();
+			}
 		}
 	}
 

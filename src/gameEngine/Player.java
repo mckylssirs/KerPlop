@@ -28,8 +28,7 @@ public class Player implements Drawable {
 	private int levelPoints;
 	private int damagePoints;
 	private char symbol = 'P' ;
-	private int speedMultiplier = 1;
-
+	
 	public enum PlayerStatus {
 		DEAD, ADVANCING, OK;
 	}
@@ -96,6 +95,15 @@ public class Player implements Drawable {
 	 */
 	public void takeDamage() {
 		damagePoints++;
+	}
+	public void healDamage() {
+		if(damagePoints == 0) {
+			System.out.println();
+			System.out.println("Already at max Health!");
+			return;
+
+		}
+		damagePoints--;
 	}
 
 	/**
@@ -179,27 +187,19 @@ public class Player implements Drawable {
 	 * @return true if the option is valid (within bounds), false otherwise
 	 */
 	
-	public void doubleSpeed(boolean change) {
-		if (change) {
-			speedMultiplier = 2;
-		}
-		else {
-			speedMultiplier = 1;
-		}
-	}
 	private boolean updatePlayerLocation(int option) {
 		int newLocation = -1;
 		if (option == 1 && location > 0) {
-			newLocation = location - 1*speedMultiplier;
+			newLocation = location - 1;
 		}
 		else if (option == 2 && location < (GameEngine.BOARD_SIZE - 1)) {
-			newLocation = location + 1*speedMultiplier;
+			newLocation = location + 1;
 		}
 		else if (option == 3 && location > 1) {
-			newLocation = location - 2*speedMultiplier;
+			newLocation = location - 2;
 		}
 		else if (option == 4 && location < (GameEngine.BOARD_SIZE - 2)) {
-			newLocation = location + 2*speedMultiplier;
+			newLocation = location + 2;
 		}
 		if (newLocation == -1) {
 			System.out.println("Invalid option, please retry");
