@@ -1,0 +1,19 @@
+ALL ORIGINAL PIECES
+
+P - player (you)
+X - Prize (what we are after)
+m - Minion (annoying)
+K - Kangalo (can kill you)
+S - Sniper (has range but can be blocked)
+U - Unicorn (special)
+w - Doormat (does nothing)
+
+OUR PIECES
+P - player (you)(already implemented)
+b - bush (does nothing) (only drawable/not game piece)
+G - Grandma (instant kill) (implements moveable)
+r - rascal (does one point of damage) (implements moveable)
+_ - lava puddle (does one point of damage) (interacts but does not move)
+H - healing potion (returns 1 point of damage) (interacts but does not move)
+X - prize (gives one point) (interacts but does not move)
+ 
